@@ -1,0 +1,139 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<dom-module id="com-product-detail">
+	<style>
+		.container{
+			width: 100%;
+			height: calc(100vh-65px);
+			overflow-x: hidden;
+			display: flex;
+		}
+		.container img{
+			position: relative;
+			left: 25%;
+			transform: translateX(-50%);
+		}
+		.details{
+			width: 100%;
+			margin: auto;
+			margin-left: 5%;
+			padding-left: 30%;
+			margin-top: 10%;
+		}
+		.size{
+			width: 20%;
+		}
+		.buttons{
+			margin-top: 10%;
+			margin-bottom: 10%;
+		}
+		h2{
+			text-align: center;
+			
+		}
+		.similar img{
+			height: 200px;
+			margin: auto;
+			display: flex;
+		}
+		.similar{
+			max-width: 980px;
+			margin: auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.heading{
+			width: 100%;
+			margin-top: 10%;
+		}
+		paper-list-box{
+			width: 100%;
+		}
+		a{
+			text-decoration: none;
+		}
+		@media(max-width: 800px){
+			.container{
+				display: block;
+				margin: auto;
+			}
+			.container img{
+				margin: 0;
+				width: 100%;
+			}
+			.details{
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+			h2{
+				font-size: 40px;
+			}
+			p{
+				margin-top: 20px;
+				text-align: center;
+				font-size: 30px;
+			}
+			.size{
+				width: unset;
+				font-size: 30px;
+			}
+			paper-button{
+				font-size: 20px;
+			}
+			.similar{
+				width: 90%;
+				margin: auto;
+			}
+		}
+		@media(max-width: 600px){
+			h2{
+				font-size: 25px;
+			}
+			p{
+				font-size: 20px;
+			}
+		}
+		
+	</style>
+	<template>
+		<div class="container">
+			<img src="../../images/sandals.jpg">
+			<div class="heading">
+				<h2>Puma Windbreaker FlipFlops</h2>	
+				<div class="details">
+					<p><b>Color</b>:Orange</p>
+					<p><b>Material</b>:Synthetic Rubber</p>
+					<paper-dropdown-menu label="Size" class="size">
+		  				<paper-listbox class="dropdown-content">
+						    <paper-item>6</paper-item>
+						    <paper-item>7</paper-item>
+						    <paper-item>8</paper-item>							
+						    <paper-item>9</paper-item>
+		 				</paper-listbox>
+					</paper-dropdown-menu>
+					<div class="buttons">
+						<a><paper-button raised>Add to Cart</paper-button></a>
+						<a href="#/payment"><paper-button raised>Buy Now</paper-button></a>
+					</div>
+				</div>	
+			</div>		
+		</div>
+		<h2>You may also Like</h2>
+		<div class="similar">
+			<img src="../../images/shoe1.jpeg">
+			<img src="../../images/shoe1.jpeg">
+			<img src="../../images/shoe1.jpeg">
+			<img src="../../images/shoe1.jpeg">
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is:'com-product-detail'
+		});
+	</script>
+</dom-module>

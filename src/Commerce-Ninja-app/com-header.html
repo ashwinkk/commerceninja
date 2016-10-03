@@ -1,0 +1,106 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+
+<dom-module is="com-header">
+	<style>
+		
+		.heading{
+			width: 100%;
+			color: black;
+		}
+		.toolbar{
+			text-align: center;
+			background-color: rgba(255,255,255,0.5);
+			position: relative;
+			z-index: 99;
+		}
+		.links{
+			position: absolute;
+		}
+		.container{
+			margin: auto;
+			display: flex;
+			height: 100%;
+			width: 50%;
+		}
+		.container div{
+			margin: auto;
+		}
+		.container-logo{
+			margin:auto;			
+		}
+		a{
+			text-decoration: none;
+		}		
+		.menu{
+			position: absolute;
+			background-color: white;
+			display: flex;
+		}
+		.viewfinder{
+			padding: 25px;
+			position: relative;
+			display: flex;
+			width: 500px;
+			height: 300px;
+		}
+		.logo{
+			height: 70px;
+		}
+		@media(max-width: 800px){
+			.container{
+				width: 90%;
+			}
+			.toolbar{
+				background-color: white;
+			}
+		}
+		@media(max-width: 600px){
+			div>a>paper-button{
+				font-size: 10px;
+			}
+			.container{
+				width: 100%;
+			}
+			.toolbar{
+				background-color: white;
+			}
+			.logo{
+				height:50px;
+			}
+		}	
+	</style>
+	<template>
+		<paper-toolbar class="toolbar">
+			<div class="container">
+				<div>
+					<a href="#/products"><paper-button noink style="color:black;">Men</paper-button></a>
+				</div>
+				<div>
+					<a href="#/products"><paper-button noink style="color:black;">Women</paper-button></a>
+				</div>
+				<div>
+					<a href="#/"><img class="logo" src="../../images/logo.png"></a>
+				</div>
+				<div>
+					<a href="#/products"><paper-button noink style="color:black;">Kids</paper-button></a>
+				</div>
+				<div>
+					<a href="#/cart"><paper-button noink style="color:black;">Bag(0)</paper-button></a>
+				</div>
+			</div>
+		</paper-toolbar>
+	</template>
+	<script>
+		Polymer({
+			is:'com-header',
+			
+		});
+	</script>
+</dom-module>

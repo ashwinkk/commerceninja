@@ -1,0 +1,60 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module id="com-ty">
+	<style>
+		.container{
+			max-width: 980px;
+			margin: auto;
+		}
+		h1{
+			text-align: center;
+		}
+		p{
+			text-align: center;
+		}
+		.item{
+			display: flex;
+			height: 100px;
+		}
+		.item img{
+			height: 100%;
+		}
+		.subitems{
+			display: flex;
+			width: 100%;
+		}
+		.subitems *{
+			margin: auto;
+		}
+		.order-card{
+			width: 100%;
+			text-align: center;
+		}
+	</style>
+	<template>
+		<div class="container">
+			<h1>Thank you for shopping with us, Username!</h1>
+			<p>An email has been sent to example@gmail.com which contains invoice.</p>
+			<paper-card class="order-card">
+				<div>
+					<h2>Order Summary</h2>
+					<hr>
+					<div class="item">
+						<img src="../../images/shoe1.jpg">
+						<div class="subitems">
+							<p>Nike awesome</p>
+							<p>Price</p>
+							<paper-button>Remove</paper-button>
+						</div>
+					</div>
+				</div>
+			</paper-card>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is: 'com-ty'
+		});
+	</script>
+</dom-module>

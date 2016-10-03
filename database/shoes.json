@@ -1,0 +1,247 @@
+[
+	{
+		"id":"1",
+		"name":"Fila CASTELLO Running Shoes  (Grey)",
+		"brand": "Fila",
+		"description": "Combining lightweight comfort with heightened flexibility, this pair of ?FuzeX? men?s training shoes from ASICS makes for an apt pick as your daily trainers. The features of these blue coloured lace-ups are:",
+		"thumbnail": "../../images/11453714724583-Nike-Men-Grey-Flex-Supreme-TR-4-Training-Shoes-3961453714724393-4.jpg",
+		"size" : 2 ,
+		"type1" : "casual",
+		"type2" : "men",
+		"price" : 100
+	}, 
+	
+
+	{
+		"id":"2",
+		"name":"Nike REVOLUTION 2 MSL Running Shoes",
+		"brand": "Nike",
+		"description": "Keep your feet well supported and balanced when you work out by slipping your feet into these ‘FS Lite Trainer 4 Grey Training Shoes’ from Nike. Lightweight and flexible, these shoes have a synthetic upper and a rubber sole. Pair these training shoes with your regular sportswear for a complete look. ",
+		"thumbnail": "../../images/11453714724583-Nike-Men-Grey-Flex-Supreme-TR-4-Training-Shoes-3961453714724393-4.jpg",
+		"size" : 5 ,
+		"type1" : "casual",
+		"type2" : "women",
+		"price" : 200
+	},
+
+
+	{
+		"id":"3",
+		"brand": "Puma",
+		"name":"Puma Strike Fashion II DP Men Running Shoes  (Green, Grey)",
+		"description": "Get noticed for your formal look by wearing this stylish pair of green coloured formal shoes from Woodland. The leather upper and lining makes these shoes highly durable, while the TPR (thermoplastic rubber) outsole will ensure a firm grip to its wearer. These lace-up shoes will stun your colleagues when clubbed with your semi-formal wear on a Friday.",
+		"thumbnail": "../../images/11455171224120-FILA-Men-Sports-Shoes-4311455171223920-4.jpg",
+		"size" : 3 ,
+		"type1" : "casual",
+		"type2" : "kids",
+		"price" : 340
+	},
+	{
+		"id":"4",
+		"name":"Woodland Olive Derby Formal Shoes",
+		"brand":"Woodlands",
+		"description":"Get noticed for your formal look by wearing this stylish pair of green coloured formal shoes from Woodland. The leather upper and lining makes these shoes highly durable, while the TPR (thermoplastic rubber) outsole will ensure a firm grip to its wearer. These lace-up shoes will stun your colleagues when clubbed with your semi-formal wear on a Friday.",
+		"thumbnail":"../../images/11469168935454-Puma-Men-Sports-Shoes-9341469168934925-4.jpg",
+		"size":4,
+		"type2":"men",
+		"type1":"casual",
+		"price":500
+	},
+	{
+		"id":"5",
+		"name":"Adipure Cf Black Slippers",
+		"brand":"Addidas",
+		"description":"adidas presents these black slippers that will instantly appeal to all urbane men. The printed brand logo on footbed lends these slippers a trendy appeal, while the broad strap adds an element of fashion. Featuring synthetic upper and lining, these slip-ons are durable and light in weight.",
+		"thumbnail":"../../images/11469172086311-Nike-Men-Fluorescent-Green--Black-ZOOM-TRAIN-INCREDIBLY-FAST-Training-Shoes-9511469172085151-1.jpg",
+		"size":"2",
+		"type2":"women",
+		"type1":"formal",
+		"price":900
+	},
+	{
+		"id":"6",
+		"name":"Black Casual Sneakers",
+		"brand":"Sparx",
+		"description":"Club your casuals with trendy and comfortable footwear like these sneakers for women by Sparx. These sneakers featuring synthetic lining will ensure your feet maximum flexibility and breathability",
+		"thumbnail":"../../images/11469434714664-Adidas-Men-Sports-Shoes-1081469434714509-3.jpg",
+		"size":"3",
+		"type2":"men",
+		"type1":"casual",
+		"price":8000
+	},
+	{
+		"id":"7",
+		"name":"Propel Red Running Shoes",
+		"brand":"Puma",
+		"description":"Clock up the miles swiftly and smoothly with the performance-driven response of these ?Propel? men?s running shoes from PUMA",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":"3",
+		"type1":"casual",
+		"type2":"women",
+		"price":4500
+	},
+	{
+		"id":"8",
+		"name":"Cosmic 1.1 Grey Running Shoes",
+		"brand":"Addidas",
+		"description":"Make sure your performance doesn?t dwindle even during high-mileage runs in these ?Cosmic 1.1? women?s running shoes from adidas.",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":700
+	},
+	{
+		"id":"9",
+		"name":"Lunarstelos Black Running Shoes",
+		"brand":"Nike",
+		"description":"Faster, lighter and smoother are these ‘LunarStelos’ men’s running shoes from Nike. Designed keeping in mind the quintessential necessities of a rigorous runner",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":499
+	},
+	{
+		"id":"10",
+		"name":"St Trainer Evo Black Sneakers",
+		"brand":"Nike",
+		"description":"To complement your sporty style, PUMA presents these black sneakers. Designed for men, these lace-ups feature a breathable mesh upper and mesh lining. Not to forget, the rubber outsole that further makes them highly durable and comfortable to wear",
+		"thumbnail":"../../images/11469434714664-Adidas-Men-Sports-Shoes-1081469434714509-3.jpg",
+		"size":2,
+		"type1":"casual",
+		"type2":"men",
+		"price":580
+	},
+	{
+		"id":"11",
+		"name":"Valor Mesh Black Running Shoes",
+		"brand":"Nike",
+		"description":"Black in colour, these ?Valor Mesh? running shoes from PUMA are especially designed for all fitness-conscious men. While the mesh, synthetic leather upper and mesh lining make these lace-ups light in weight and durable, the rubber outsole provides superior grip and abrasion. ",
+		"thumbnail":"../../images/11445084028321-Marc-Loire-Women-Tan-Brown-Casual-Shoes-2671445084028068-4.jpg",
+		"size":1,
+		"type1":"formal",
+		"type2":"women",
+		"price":877
+	},
+	{
+		"id":"12",
+		"name":"Roadster Blue Lifestyle Shoes",
+		"brand":"Roadster",
+		"description":"Make the rest zoom in their attention on your feet as you step out wearing these blue casual shoes from Spunk. These shoes are absolutely comfortable to wear owing to their canvas material upper and fabric lining. Furthermore, the Air Max sole of these shoes provides durability and a good grip",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":4,
+		"type1":"casual",
+		"type2":"men",
+		"price":800
+	},
+	{
+		"id":"13",
+		"name":"Coast Black Running Shoes",
+		"brand":"New Balance",
+		"description":"New Balance presents these 'Coast' running shoes, which will help you give your best during the workout and training sessions. Meant for men, these running shoes are long-lasting",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"formal",
+		"type2":"women",
+		"price":5777
+	},
+	{
+		"id":"14",
+		"name":"Go Walk City Navy Blue Sneakers",
+		"brand":"sketchers",
+		"description":"dad",
+		"thumbnail":"../../images/11445084028321-Marc-Loire-Women-Tan-Brown-Casual-Shoes-2671445084028068-4.jpg",
+		"size":4,
+		"type1":"formal",
+		"type2":"men",
+		"price":499
+	},
+	{
+		"id":"15",
+		"brand":"Converse",
+		"description":"Complete your sporty look with these ?Go Walk City? sneakers for men by SKECHERS. Navy blue in colour, these lace-ups feature mesh upper and lining",
+		"thumbnail":"../../images/11445084028321-Marc-Loire-Women-Tan-Brown-Casual-Shoes-2671445084028068-4.jpg",
+		"size":4,
+		"type1":"casual",
+		"type2":"men",
+		"price":800
+	},
+	{
+		"id":"16",
+		"name":"Marengo Navy Blue Floaters",
+		"brand":"Addidas",
+		"description":"Stay relaxed all day long wearing these navy blue coloured floaters from the house of adidas. The synthetic upper and lining make these floaters for women high on quality. The rubber sole will keep your feet super comfortable all day long",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":499
+	},
+	{
+		"id":"17",
+		"name":"Zoom Winflo 3 Grey Running Shoes",
+		"brand":"Nike",
+		"description":"Nike presents these grey coloured 'Zoom Winflo 3' running shoes, which will let you run with utmost confidence and zeal",
+		"thumbnail":"../../images/11445084028321-Marc-Loire-Women-Tan-Brown-Casual-Shoes-2671445084028068-4.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":822
+	},
+	{
+		"id":"18",
+		"name":"Vikky Mid Magenta Sporty Sneakers",
+		"brand":"Puma",
+		"description":"Classic design meets modern comfort in these magenta ?Vikky Mid? sneakers from PUMA. Designed with suede leather upper for a lasting wear, these women?s sneakers feature a signature formstrip at the sides for a distinct identity",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":4,
+		"type1":"casual",
+		"type2":"women",
+		"price":788
+	},
+	{
+		"id":"19",
+		"name":"Flex 2016 Rn Black Running Shoes",
+		"brand":"Nike",
+		"description":"Designed to run stronger and longer, these black coloured 'Flex 2016 Rn' running shoes from the house of Nike will catch your fancy at once.",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":499
+	},
+	{
+		"id":"20",
+		"name":"Magista Onda Ii Fg Green Football Shoes",
+		"brand":"Nike",
+		"description":"Keep your feet well supported by wearing ‘Magista Onda II Fg Green Football Shoes’ from Nike. These shoes have a synthetic upper and a rubber sole that keeps your feet in the right posture while you play.",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":499
+	},
+	{
+		"id":"21",
+		"name":"Air Max Sequent Black Running Shoes",
+		"brand":"Nike",
+		"description":"Make running your favorite way to de-stress by slipping into ‘Air Max Sequent Black Running Shoes’ from Nike.",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":499
+	},
+	{
+		"id":"22",
+		"name":"Fs Lite Trainer 4 Black Training Shoes",
+		"brand":"Nike",
+		"description":"Keep your feet well supported and balanced when you work out by slipping your feet into these ‘FS Lite Trainer ",
+		"thumbnail":"../../images/shoe1.jpg",
+		"size":3,
+		"type1":"casual",
+		"type2":"men",
+		"price":499
+	}
+]

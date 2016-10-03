@@ -1,0 +1,366 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../bower_components/paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../../bower_components/paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
+
+<dom-module id="com-products">
+	<style>
+		:host{
+			display:block;
+		}
+		h1{
+			width: 100%;
+			text-align: center;
+		}
+		.container{
+			max-width: 80%;
+			margin: auto;
+		}
+		.shoe{
+			margin: auto;
+			width: 30%;
+			text-align: center;
+			margin-bottom: 15px;
+			transition: box-shadow .5s;
+		}
+		.shoe p{
+			padding: 10px;
+		}
+		.shoe img{
+			width: 100%;
+		}
+		.shoe:hover{
+
+			box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                  0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                  0 3px 5px -1px rgba(0, 0, 0, 0.4); 
+		}
+		.shoe{
+			margin-left: 0%;
+		}
+		.shoecontainer{
+			display: flex;
+			flex-flow: row;
+			flex-wrap: wrap;
+		}
+		.filter-list{
+			width: 280px;
+		}
+		.product-list{
+			display: flex;
+			flex-wrap: wrap;
+			width: 70%;
+		}
+
+		paper-checkbox{
+			display: block;
+		}
+
+		paper-material > p,paper-material paper-checkbox{
+			margin-left: 8px;
+			padding-left: 8px;
+		}
+
+		paper-material > p{
+			width: 80%;
+		}
+
+		.items{
+			display: flex;
+		}
+		@media(max-width: 600px){
+			.product-list{
+				width: 100%;
+				margin: auto;
+			}
+			.filter-list{
+				width: 50%;
+				display: flex;
+			}
+			.shoe{
+				margin-left: 10%;
+			}
+			.filter-list{
+				display: none;
+			}
+		}
+	</style>
+	<template>
+		<div class="container">
+			<h1>Products</h1>
+			<div class="shoecontainer" id="shoes">
+				<div class="filter-list">
+
+
+				<paper-material >
+						<p> <strong> Shoe Type </strong> </p>
+						
+						<paper-checkbox id="casual" value="casual">
+							Casual Shoes
+						</paper-checkbox>
+
+						<paper-checkbox id="formal" value="formal">
+							Formal Shoes 
+						</paper-checkbox>
+
+				</paper-material>
+
+				
+
+				<paper-material>
+						<p> <strong> Price Range </strong> </p>
+						<paper-slider id="range"  min="0" max="5000" value="5000" editable   > </paper-slider> 
+				</paper-material>
+
+
+				<paper-material>
+						<p> <strong> Shoe Size </strong> </p>
+
+						<paper-checkbox id="size_1"> 1 </paper-checkbox>
+
+						<paper-checkbox id="size_2"> 2 </paper-checkbox>
+
+						<paper-checkbox id="size_3"> 3 </paper-checkbox>
+
+						<paper-checkbox id="size_4"> 4 </paper-checkbox>
+				</paper-material>
+
+
+				<paper-material>
+						<p> <strong> Shoe Type2 </strong> </p>
+						<paper-checkbox id="men"> Men </paper-checkbox>
+						<paper-checkbox id="women"> Women </paper-checkbox>
+						<paper-checkbox id="kids"> Kids </paper-checkbox>
+				</paper-material>
+				</div>
+				<div class="product-list" id="list">
+					<template is="dom-repeat" items="{{filteredShoes}}" id="shoelist">
+					<paper-material class="shoe" elevation="0">
+							<p style="opacity:0;height:0">{{item.id}}</p>
+							<a href="#/product-detail"><img src="{{item.thumbnail}}"></a>
+							<small>  {{item.name}}<br>&#8377; {{item.price}} </small> 
+							<paper-button>Add to cart</paper-button>
+					</paper-material>
+					</template>
+				</div>
+			</div>
+		</div>
+		<paper-dialog id="dialog">
+			<img src="{{modalImage}}">
+			<p>{{modalName}}</p>
+		</paper-dialog>
+	</template>
+	<script>
+		Polymer({
+			is: 'com-products',
+			
+			listeners:{
+				'casual.tap' : 'change_type1', 
+				'formal.tap' : 'change_type1',
+				'range.tap' : 'setRange',
+				'size_1.tap' : 'setSize',
+				'size_2.tap' : 'setSize',
+				'size_3.tap' : 'setSize',
+				'size_4.tap' : 'setSize',
+				'list.tap' : 'addToCart',
+				'men.tap' : 'change_type2',
+				'women.tap' : 'change_type2',
+				'kids.tap' : 'change_type2',
+
+			},
+
+			properties:{
+				selected:{
+					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				}
+			},
+
+			addToCart: function(e){
+				var elem = e.target;
+				if(elem.tagName=='PAPER-BUTTON'){
+					var par = elem.parentElement;
+					var id = par.children[0].innerHTML;	
+					// alert(JSON.stringify(this.shoes[parseInt(id)-1]));
+					this.selected += (this.shoes[parseInt(id)-1]);				
+				}
+			},
+
+			ready: function(){
+				var self=this;
+			
+				this.filters = {
+					type1 : [],
+					range : 1000,
+					size  : [],
+					type2 : [],
+				};
+
+				this.filteredShoes = [];
+
+				this.$.range.addEventListener("value-change",
+						function(event){
+							//console.log(event.target);
+							self.filters.range = event.target.value;
+							self.fil();
+						}
+					);
+
+
+				$.get('../../database/shoes.json',
+					function(data){
+						self.shoes=data;	
+						self.filteredShoes = self.shoes;				
+				});
+
+				
+				var shoesList = document.getElementById('shoes');
+				// this.selected={
+				// 	hello:"world"
+				// }
+			},
+
+			change_type1 : function(){
+				this.filters.type1 = []; // new Set([]);
+				
+				if(this.$.casual.checked)
+				{
+					this.filters.type1.push('casual');
+				}
+				
+				if(this.$.formal.checked)
+					this.filters.type1.push('formal');
+				
+				this.fil();
+			},
+
+			change_type2 : function(){
+				this.filters.type2 = []; // new Set([]);
+
+				if(this.$.men.checked)
+					this.filters.type2.push('men');
+				
+				if(this.$.women.checked)
+					this.filters.type2.push('women');
+
+				if(this.$.kids.checked)
+					this.filters.type2.push('kids');
+				
+				this.fil();
+			},
+
+			
+
+			setSize : function()
+			{
+				this.filters.size = [];
+
+				if(this.$.size_1.checked)
+					this.filters.size.push(1);
+				if(this.$.size_2.checked)
+					this.filters.size.push(2);
+				if(this.$.size_3.checked)
+					this.filters.size.push(3);
+				if(this.$.size_4.checked)
+					this.filters.size.push(4);
+
+				this.fil();
+			},
+
+
+			fil : function()
+			{
+				//console.log(JSON.stringify(this.filters));
+				//console.log(JSON.stringify(this.filteredShoes) );
+				//  console.log(JSON.stringify(this.filters) );
+				var cur_shoes1 = [];
+				var cur_shoes2 = [];
+				this.filteredShoes = [];
+
+				if(this.filters.size.length!=0)
+					for(var sh of this.shoes)
+					{
+						for(var size of this.filters.size)
+						{
+							if( size==sh.size )
+								cur_shoes1.push(sh);
+							// console.log(size);
+							// console.log(sh.size);
+						}
+
+					}
+				else
+					cur_shoes1 = new Array(this.shoes)[0];
+
+				//   console.log( "After size:" + JSON.stringify(cur_shoes1) );
+
+
+
+
+				if(this.filters.type1.length!=0)
+					for(var sh of cur_shoes1)
+					{
+						for(var type1 of this.filters.type1)
+						{
+							if( type1==sh.type1 )
+								cur_shoes2.push(sh);
+							// console.log(type1);
+							// console.log(sh.type1);
+						}
+					}
+				else
+					cur_shoes2 = new Array(cur_shoes1)[0];
+
+
+				//   console.log( "After type1:" + JSON.stringify(cur_shoes2) );
+
+
+
+				cur_shoes1 = [];
+
+				if(this.filters.type2.length!=0)
+					for(var sh of cur_shoes2)
+					{
+						for(var type2 of this.filters.type2)
+							if( type2==sh.type2 )
+							{
+								cur_shoes1.push(sh);
+								console.log(type2);
+								console.log(sh.type2);
+							}
+					}
+				else
+					cur_shoes1 = new Array(cur_shoes2)[0];
+
+
+
+				cur_shoes2 = [];
+
+				for(var sh of cur_shoes1)
+				{
+						if(  sh.price <= this.filters.range )
+							cur_shoes2.push(sh);
+				}
+
+				
+
+				this.filteredShoes = cur_shoes2;
+
+				console.log( "Finall:\n\n"+JSON.stringify(this.filteredShoes) );
+				this.$.shoelist.render();
+
+			},
+
+
+
+		});
+
+	</script>
+</dom-module>

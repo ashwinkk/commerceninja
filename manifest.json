@@ -1,0 +1,7 @@
+{
+  "name": "Commerce-Ninja",
+  "short_name": "Commerce-Ninja",
+  "description": "e commerce website",
+  "start_url": "/",
+  "display": "standalone"
+}

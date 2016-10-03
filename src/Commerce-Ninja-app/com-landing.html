@@ -1,0 +1,85 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/awesome-slider/awesome-slider.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+<dom-module is="com-landing">
+	<style>
+		.slideshow{
+			transform: translateY(-65px);	
+		}
+		h2{
+			font-size: 40px;
+		}
+		.hot-deals{
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.hot-deals paper-card{
+			margin: auto;
+			width: 30%;
+		}
+		.container{
+			width: 80%;
+			margin: auto;
+		}
+		@media(max-width: 800px){
+			h2{
+				text-align: center;
+				font-size: 50px;
+			}
+			.slideshow{
+				transform: none;
+			}
+			.hot-deals{
+				display: block;
+				text-align: center;
+			}
+			.hot-deals paper-card{
+				width: 90%;
+				display: block;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+		}
+		@media(max-width: 600px){
+			.container{
+				width: 90%;
+			}
+			.hot-deals{
+				display: block;
+			}
+			.slideshow{
+				transform: translateY(0);
+			}
+		}
+	</style>
+	<template>
+		<section>
+		<div class="show">
+			<awesome-slider height="x30%" class="slideshow" pre-image="../../images/logo.png" autostart="true">
+			    <item source="../../images/untitled1.jpg"></item>
+			    <item source="../../images/untitled2.jpg"></item>
+			    <item source="../../images/untitled3.jpg"></item>
+			    <item source="../../images/untitled4.jpg"></item>
+			</awesome-slider>
+		</div>
+		</section>
+		<section>
+			<div class="container">
+			<h2>Hot Deals!</h2>
+			<div class="hot-deals">
+				<paper-card elevation="2" image="../../images/off.png"></paper-card>
+				<paper-card elevation="2" image="../../images/off2.png"></paper-card>
+				<paper-card elevation="2" image="../../images/off3.png"></paper-card>
+			</div>
+			</div>
+		</section>
+	</template>
+	<script>
+		Polymer({
+			is:"com-landing"
+		});
+	</script>
+</dom-module>

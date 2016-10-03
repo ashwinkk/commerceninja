@@ -1,0 +1,63 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+
+<link rel="import" href="com-header.html">
+<link rel="import" href="com-landing.html">
+<link rel="import" href="com-products.html">
+<link rel="import" href="com-cart.html">
+<link rel="import" href="com-ty.html">
+<link rel="import" href="com-payment.html">
+<link rel="import" href="com-product-detail.html">
+
+<dom-module id="Commerce-Ninja-app">
+  <style>
+  </style>
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <com-header></com-header>
+    <app-location route="{{route}}" use-hash-as-path></app-location>
+    <app-route
+      route="{{route}}"
+      pattern="/:page"
+      data="{{data}}"
+      tail="{{tail}}">
+    </app-route>
+    <iron-pages attr-for-selected="name" selected="{{route.path}}">
+      <com-landing name="/"></com-landing>
+      <com-products selected="{{communicator}}" name="/products"></com-products>
+      <com-cart cartitems="{{communicator}}" name="/cart"></com-cart>
+      <com-ty name="/ty"></com-ty>
+      <com-payment name="/payment"></com-payment>
+      <com-product-detail name="/product-detail"></com-product-details>
+    </iron-pages>
+  </template>
+
+  <script>
+    Polymer({
+        is: 'Commerce-Ninja-app',
+        properties:{
+          path:{
+            type:String,
+            reflectToAttribute:true,
+            observer:'setInitPath'
+          }
+        },
+        observers:[
+          'pageInit(routeData.path)'
+        ],
+        ready: function(){
+          this.communicator=[];
+          // alert(this.route.path);
+          if(this.route.path==""){
+            location.href += "#/";
+          }
+        }
+    });
+  </script>
+</dom-module>

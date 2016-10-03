@@ -1,0 +1,562 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"b",
+				"border-top"
+			],
+			[
+				"o",
+				"overflow"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"bo",
+				"border-right"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"text",
+				"text-shadow"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"h",
+				"h3\tTag"
+			],
+			[
+				"BA",
+				"background"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"i",
+				"id\tAttr"
+			],
+			[
+				"ALI",
+				"vertical-align"
+			],
+			[
+				"ali",
+				"vertical-align"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"pr",
+				"promotions"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"get",
+				"getPromotion"
+			],
+			[
+				"dish",
+				"dishComment"
+			],
+			[
+				"dat",
+				"dataService"
+			],
+			[
+				"comme",
+				"comments"
+			],
+			[
+				"dis",
+				"dishComment"
+			],
+			[
+				"test",
+				"testdate"
+			],
+			[
+				"to",
+				"toISOString"
+			],
+			[
+				"re",
+				"required\tAttr"
+			],
+			[
+				"hei",
+				"min-height"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"align",
+				"text-align"
+			],
+			[
+				"al",
+				"vertical-align"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"conf",
+				"confusionApp"
+			],
+			[
+				"res",
+				"reserveModal"
+			],
+			[
+				"close",
+				"closeLogin"
+			],
+			[
+				"che",
+				"cheesecakeModal"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"c",
+				"content\tAttr"
+			],
+			[
+				"met",
+				"meta"
+			],
+			[
+				"s",
+				"src\tAttr"
+			],
+			[
+				"fo",
+				"form\tTag"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"backgroun",
+				"background-size"
+			],
+			[
+				"head",
+				"header\tTag"
+			],
+			[
+				"on",
+				"onclick"
+			],
+			[
+				"the",
+				"theLeftSide"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"tae",
+				"targer_index"
+			],
+			[
+				"tar",
+				"targer_index"
+			],
+			[
+				"gue",
+				"guessed_word"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"pro",
+				"prompt"
+			],
+			[
+				"do",
+				"do_game"
+			],
+			[
+				"my",
+				"my_num"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"for",
+				"form\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/app/products-list.ts",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/css/product.component.css",
+		"/C/Users/USER/Documents/web/comninja/bower.json",
+		"/C/Users/USER/Documents/web/comninja/src/Commerce-Ninja-app/com-products.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/js/promo.js",
+		"/C/Users/USER/Documents/web/ezyt/desserts.html",
+		"/C/Users/USER/Documents/web/assignment_and_exercise_files/WEBPAGES/menu.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/tempelate/default.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/app/product.ts",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/templates/cart.component.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/templates/products.component.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/css/cart.component.css",
+		"/C/Users/USER/Documents/web/polymer-first-elements/bower.json",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/app/products.component.js",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/tempelate/thanks.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/tempelate/promo.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/tempelate/pay.html",
+		"/C/Users/USER/Documents/web/conFusion/app/index.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/css/promo.css",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/tempelate/promo.css",
+		"/C/Users/USER/Documents/web/Commerce Ninja/commerceninja/tempelate/cart.html",
+		"/C/Users/USER/Documents/web/Commerce Ninja/cart.html",
+		"/C/Users/USER/Documents/web/assignment_and_exercise_files/previousworks/menu.html",
+		"/C/Users/USER/Documents/web/ezyt/css/desserts.css",
+		"/C/Users/USER/Documents/web/ezyt/test.html",
+		"/C/Users/USER/Documents/web/json-server/public/views/home.html",
+		"/C/Users/USER/Documents/web/json-server/public/index.html",
+		"/C/Users/USER/Documents/web/conFusion/bower.json",
+		"/C/Users/USER/Documents/web/json-server/public/views/menu.html",
+		"/C/Users/USER/Documents/web/json-server/public/views/dishdetail.html",
+		"/C/Users/USER/Documents/web/json-server/db.json",
+		"/C/Users/USER/Documents/web/assignment_and_exercise_files/previousworks/controllers.js",
+		"/C/Users/USER/Documents/web/json-server/public/scripts/services.js",
+		"/C/Users/USER/Documents/web/conFusion/app/scripts/app.js",
+		"/C/Users/USER/Documents/web/EzytPro/bower.json",
+		"/C/Users/USER/Documents/web/conFusion/app/scripts/services.js",
+		"/C/Users/USER/Documents/web/json-server/public/scripts/controllers.js",
+		"/C/Users/USER/Documents/web/conFusion/app/scripts/controllers.js",
+		"/C/Users/USER/Documents/web/ezyt/manageorder.html",
+		"/C/Users/USER/Documents/web/conFusion/app/views/contactus.html",
+		"/C/Users/USER/Documents/web/conFusion/app/views/aboutus.html",
+		"/C/Users/USER/Documents/web/conFusion/gulpfile.js",
+		"/C/Users/USER/Documents/web/ezyt/javascript/desserts.js",
+		"/C/Users/USER/Documents/web/New folder/conFusioncss/index.html",
+		"/C/Users/USER/Documents/web/conFusion/app/scripts/previousworks/services.js",
+		"/C/Users/USER/Documents/web/conFusion/app/views/header.html",
+		"/C/Users/USER/Documents/web/conFusion/app/styles/mystyles.css",
+		"/C/Users/USER/Documents/web/conFusion/app/scripts/previousworks/asfactory_notservice.js",
+		"/C/Users/USER/Documents/web/conFusion/app/views/footer.html",
+		"/C/Users/USER/Documents/web/conFusion/app/contactus.html",
+		"/C/Users/USER/Documents/web/conFusion/app/views/home.html",
+		"/C/Users/USER/Documents/web/conFusion/app/views/dishdetail.html",
+		"/C/Users/USER/Documents/web/conFusion/app/menu.html",
+		"/C/Users/USER/Documents/web/conFusion/app/dishdetail.html",
+		"/C/Users/USER/Documents/web/conFusion/app/test.html",
+		"/C/Users/USER/Documents/web/conFusion/app/scripts/asfactory_notservice.js",
+		"/C/Users/USER/Documents/gittut/version-control/recipies/recipes/New recipe.txt",
+		"/C/Users/USER/Documents/gittut/version-control/reflections/reflections_1.txt",
+		"/C/Users/USER/Documents/gittut/version-control/asteroids/game.js",
+		"/C/Users/USER/Documents/gittut/review.txt",
+		"/C/Users/USER/Documents/web/New folder/conFusioncss/css/mystyles.css",
+		"/C/Users/USER/Documents/web/New folder/conFusioncss/css/mystyles-old.css",
+		"/C/Users/USER/Documents/web/conFusion/app/ASSIGNMENT 2/app.js",
+		"/C/Users/USER/Documents/web/conFusion/app/ASSIGNMENT 2/dishdetail.html",
+		"/C/Users/USER/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/USER/Documents/web/conFusion/app/contactus,html.html",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/app/scripts/app.js",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/Gruntfile.js",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/package.json",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/.jshintrc",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/app/menu.html",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/app/test.html",
+		"/C/Users/USER/CordovaProjects/CordovaProject/www/css/index.css",
+		"/C/Users/USER/Documents/web/New folder/conFusiongrunt/app/dishdetail.html",
+		"/C/Users/USER/Documents/web/conFusion/gulp.js",
+		"/C/Users/USER/Documents/web/conFusion/package.json",
+		"/C/Users/USER/Documents/web/conFusioncss/bower.json",
+		"/C/Users/USER/CordovaProjects/CordovaProject/www/signup.html",
+		"/C/Users/USER/CordovaProjects/CordovaProject/www/index.html",
+		"/C/Users/USER/CordovaProjects/CordovaProject/config.xml",
+		"/C/Users/USER/Documents/web/conFusioncss/index.html",
+		"/C/Users/USER/Documents/web/ezyt/index.html",
+		"/C/Users/USER/Documents/web/conFusioncss/indexd.html",
+		"/C/Users/USER/Documents/web/veruthe,html.html",
+		"/C/Users/USER/Documents/web/conFusion/.jshintrc",
+		"/C/Users/USER/Documents/web/conFusion/Gruntfile.js",
+		"/C/Users/USER/Documents/web/conFusion/dist/menu.html",
+		"/C/Users/USER/Documents/web/conFusion/dist/scripts/main.694469c9de2c333b340f.js",
+		"/C/Users/USER/Documents/web/conFusion/dist/styles/main.ba6e3187c39d3c354d79.css",
+		"/C/Users/USER/Documents/web/a3part4.html",
+		"/C/Users/USER/Documents/web/part3.html",
+		"/C/Users/USER/Documents/web/conFusion/aboutus.html",
+		"/C/Users/USER/Documents/web/conFusion/index.html",
+		"/C/Users/USER/Documents/web/conFusion/css/mystyles.less",
+		"/C/Users/USER/Documents/web/conFusion/css/bower.json",
+		"/C/Users/USER/Documents/web/conFusion/test.html",
+		"/C/Users/USER/Documents/web/conFusion/contactus.html",
+		"/C/Users/USER/Documents/web/conFusion/css/mystyles.css",
+		"/C/Users/USER/Documents/web/modal/js/modal.js",
+		"/C/Users/USER/Documents/web/modal/css/modal.css",
+		"/C/Users/USER/Documents/web/modal/modal.html",
+		"/C/Users/USER/Documents/web/ezyt/css/manageorder.css",
+		"/C/Users/USER/Documents/web/modal/css/modal.cs",
+		"/C/Users/USER/Documents/web/ezyt/bootstrap-4.0.0-alpha.2/docs/index.html",
+		"/C/Users/USER/Documents/web/testmodal.css",
+		"/C/Users/USER/Documents/web/testmodal.js",
+		"/C/Users/USER/Documents/web/testmodal.html",
+		"/C/Users/USER/Documents/web/ezyt/css/index.css",
+		"/C/Users/USER/Documents/web/ezyt/javascript/index.js",
+		"/C/Users/USER/Documents/web/conFusi/index.html",
+		"/C/Users/USER/Documents/web/conFusion/Ristorante Con Fusion  About Us.htm",
+		"/C/Users/USER/Documents/web/conFusion/indexd.html",
+		"/C/Users/USER/Documents/web/a3part3.html",
+		"/C/Users/USER/Documents/web/a3part2.html",
+		"/C/Users/USER/Documents/web/a3part1.html",
+		"/C/Users/USER/Documents/web/a2part2.html",
+		"/C/Users/USER/Documents/web/macs.html",
+		"/C/Users/USER/Documents/web/numbergame.html",
+		"/C/Users/USER/Documents/web/a2part1.html",
+		"/C/Users/USER/Documents/web/numbergame.hml",
+		"/C/Users/USER/Documents/web/check.html",
+		"/C/Users/USER/Documents/web/part2.html",
+		"/C/Users/USER/Documents/web/part1.html",
+		"/C/Users/USER/Documents/web/html1.html",
+		"/C/Users/USER/Desktop/macs class/bootstrap.html",
+		"/C/Users/USER/Desktop/macs class/demos/11.ResponsiveDesign.html",
+		"/C/Users/USER/Desktop/macs class/demos/9.PureJsAnim.html",
+		"/C/Users/USER/Desktop/macs class/demos/8.AnimationKeyFrame.html"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"1",
+			"});",
+			">>{{",
+			");\n",
+			"}}</",
+			"this",
+			"dishes",
+			"menu",
+			">\n",
+			"warning",
+			"\">",
+			"    \n",
+			">\n",
+			"OCTYPE"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Commerce-Ninja-app.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 283.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
