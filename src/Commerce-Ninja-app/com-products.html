@@ -29,6 +29,10 @@
 			margin-bottom: 15px;
 			transition: box-shadow .5s;
 		}
+		.shoetype1 .shoetype2{
+			padding-top: 10px;
+		}
+
 		.shoe p{
 			padding: 10px;
 		}
@@ -44,6 +48,9 @@
 		.shoe{
 			margin-left: 0%;
 		}
+		#filters{
+			display: none;
+		}
 		.shoecontainer{
 			display: flex;
 			flex-flow: row;
@@ -51,13 +58,18 @@
 		}
 		.filter-list{
 			width: 280px;
+			height: auto;
 		}
 		.product-list{
 			display: flex;
 			flex-wrap: wrap;
 			width: 70%;
+			margin-left: 20px;
 		}
-
+		.shoetype1 p{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
 		paper-checkbox{
 			display: block;
 		}
@@ -65,10 +77,14 @@
 		paper-material > p,paper-material paper-checkbox{
 			margin-left: 8px;
 			padding-left: 8px;
+			margin-bottom: 8px;	
+		}
+		.show{
+			display: block !important;
 		}
 
 		paper-material > p{
-			width: 80%;
+			width: 100%;
 		}
 
 		.items{
@@ -80,46 +96,61 @@
 				margin: auto;
 			}
 			.filter-list{
-				width: 50%;
+				width: 100%;
+				display: block;
+				margin-top: 20px;
+				display: none;
+			}
+			.shoetype1{
 				display: flex;
+				margin-top: 20px;
+				font-size: 13px;
+				flex-wrap: wrap;
+			}
+			.shoetype2{
+				display: flex;
+				margin-top: 20px;
+				flex-wrap: wrap;
 			}
 			.shoe{
 				margin-left: 10%;
 			}
+			.shoecontainer{
+				display:block;
+				width: 100%;
+			}
 			.filter-list{
-				display: none;
+				
+			}
+			.product-list .shoe{
+				width: 100%;
+			}
+			#filters{
+				display: block;
 			}
 		}
 	</style>
 	<template>
 		<div class="container">
 			<h1>Products</h1>
+			<paper-button raised id="filters">Filters</paper-button>
+
 			<div class="shoecontainer" id="shoes">
-				<div class="filter-list">
-
-
-				<paper-material >
+				<div class="filter-list" id="filter-list">
+								<paper-material class="shoetype1">
 						<p> <strong> Shoe Type </strong> </p>
-						
 						<paper-checkbox id="casual" value="casual">
 							Casual Shoes
 						</paper-checkbox>
-
 						<paper-checkbox id="formal" value="formal">
 							Formal Shoes 
 						</paper-checkbox>
-
 				</paper-material>
-
-				
-
-				<paper-material>
+				<paper-material class="shoetype1">
 						<p> <strong> Price Range </strong> </p>
 						<paper-slider id="range"  min="0" max="5000" value="5000" editable   > </paper-slider> 
 				</paper-material>
-
-
-				<paper-material>
+				<paper-material class="shoetype2">
 						<p> <strong> Shoe Size </strong> </p>
 
 						<paper-checkbox id="size_1"> 1 </paper-checkbox>
@@ -132,12 +163,12 @@
 				</paper-material>
 
 
-				<paper-material>
+				<paper-material class="shoetype2">
 						<p> <strong> Shoe Type2 </strong> </p>
 						<paper-checkbox id="men"> Men </paper-checkbox>
 						<paper-checkbox id="women"> Women </paper-checkbox>
 						<paper-checkbox id="kids"> Kids </paper-checkbox>
-				</paper-material>
+				</paper-material class="shoetype"1>
 				</div>
 				<div class="product-list" id="list">
 					<template is="dom-repeat" items="{{filteredShoes}}" id="shoelist">
@@ -172,6 +203,7 @@
 				'men.tap' : 'change_type2',
 				'women.tap' : 'change_type2',
 				'kids.tap' : 'change_type2',
+				'filters.tap':'showfilters',
 
 			},
 
@@ -187,15 +219,18 @@
 				var elem = e.target;
 				if(elem.tagName=='PAPER-BUTTON'){
 					var par = elem.parentElement;
-					var id = par.children[0].innerHTML;	
+					var id = par.children[0].innerHTML;					
 					// alert(JSON.stringify(this.shoes[parseInt(id)-1]));
-					this.selected += (this.shoes[parseInt(id)-1]);				
+					this.push('selected',this.shoes[parseInt(id)-1]);
+					// this.selected[this.selected.length] = (this.shoes[parseInt(id)-1]);
+					console.log(this.selected);
+					// alert(this.selected);		
 				}
 			},
 
 			ready: function(){
 				var self=this;
-			
+				this.selected = [];
 				this.filters = {
 					type1 : [],
 					range : 1000,
@@ -273,6 +308,10 @@
 
 				this.fil();
 			},
+			showfilters :function()
+			{
+				document.getElementById('filter-list').classList.toggle('show');
+			},
 
 
 			fil : function()
@@ -332,8 +371,6 @@
 							if( type2==sh.type2 )
 							{
 								cur_shoes1.push(sh);
-								console.log(type2);
-								console.log(sh.type2);
 							}
 					}
 				else
@@ -353,7 +390,7 @@
 
 				this.filteredShoes = cur_shoes2;
 
-				console.log( "Finall:\n\n"+JSON.stringify(this.filteredShoes) );
+				
 				this.$.shoelist.render();
 
 			},

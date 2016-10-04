@@ -17,6 +17,7 @@
 		}
 		.head{
 			display: block;
+			text-align: center;
 		}
 		.left{
 			width: 50%;		
@@ -67,6 +68,7 @@
 		.item{
 			display: flex;
 			height: 100px;
+			width: 100%;
 		}
 		.item img{
 			height: 100%;
@@ -74,7 +76,7 @@
 		.subitems{
 			display: flex;
 			width: 100%;
-			font-size: 150%;
+			font-size: 15px;
 		}
 		.subitems *{
 			margin: auto;
@@ -106,7 +108,7 @@
 		}
 		.continue_button{
 				width: 100%;
-				text-align: right;
+				text-align: center;
 			
 		}
 		.credit_block{
@@ -121,6 +123,56 @@
 			width: auto;
 			font-size: 150%;
 			
+		}
+		.itemd{
+			width: 100%;
+			display: flex;
+			height: 150px;
+			background-color: white;
+		}
+		.itemd img{
+			height: 100%;
+		}
+		@media(max-width: 600px){
+			.left{
+				display: block;
+				width: 100%;
+			}
+			.fill_form{
+				width: 100%;
+			}
+			paper-input{
+				width: 100%;
+			}
+			.credit_card{
+				margin: auto;
+				width: 100%;
+				margin-top: 30px;
+			}
+			.right{
+				width: 100%;
+			}
+			.item img{
+				width: 45%;
+			}
+			.subitems{
+				display: block;
+			}
+			.itemd{
+				display: block;
+				height: unset;
+				text-align: center;
+			}
+			.itemd img{
+				/*height:100px;*/
+				width: 100%;
+			}
+			.subitems{
+				display: block;
+			}
+			p{
+				padding: 10px;
+			}
 		}
 
 	</style>
@@ -138,7 +190,7 @@
 				<div class="left">
 				
 					<div class="fill_form">
-						<h1>Your Details</h1>
+						<h3>Your Details</h3>
 						<paper-input name="name" label="Your Name"></paper-input>
 						<paper-input name="phone" label="Phone"></paper-input>
 						<gold-email-input label="your email address" type="email"></gold-email-input>
@@ -171,9 +223,7 @@
 								<paper-input name="month" label="Month"></paper-input>
 								<paper-input name="year" label="Year"></paper-input>
 								<paper-input name="securitycode" label="Security Code"></paper-input>
-								<div class="continue_button">
-									<a href="#/ty"><paper-button class="buttonc" raised>CONTINUE</paper-button></a>
-								</div>
+								
 									
 							</div>
 
@@ -186,39 +236,57 @@
 				<div>
 					<h2>Order Summary</h2>
 					<hr>
-					<div class="item">
-						<img src="../../images/shoe1.jpg">
+					<template is="dom-repeat" items="{{purchases}}" id="bag" filter="totl">
+					<div class="itemd">
+						<img src="{{item.thumbnail}}">
 						<div class="subitems">
-							<p>Nike awesome</p>
-							<p>Price</p>
+							<p>{{item.name}}</p>
+							<p>&#8377; {{item.price}}</p>
+							<div class="button">
 							<paper-button>REMOVE</paper-button>
 						</div>
 					</div>
-					<div class="item">
-						<img src="../../images/shoe1.jpg">
-						<div class="subitems">
-							<p>Nike awesome</p>
-							<p>Price</p>
-							<paper-button>REMOVE</paper-button>
-						</div>
-					</div>
-					
+				</div>
+				</template>
 				</div>
 				<div class="total">
-						<h5>Total</h5>
+						<h5 id="bc">Total :&#8377; {{total}}</h5>
 				</div>
 			</paper-card>
 			</div>
 			</div>
-			
-				
-
+		</div>
+		<div class="continue_button">
+			<a href="#/ty"><paper-button class="buttonc" raised>CONTINUE</paper-button></a>
 		</div>
 		
 	</template>
 	<script>
 		Polymer({
-			is: 'com-payment'
+			is: 'com-payment',
+			properties: {
+				purchases:{
+					type:String,
+					reflectToAttribute:true,
+					notify: true
+				}
+			},
+			listeners:{
+				'bc.tap':'update'
+			},
+			ready: function(){
+				this.total=0;
+			},
+			totl: function(item){
+				alert(item.price);
+				this.total += parseInt(item.price);
+				return true;
+			},
+			update: function(){				
+				this.bill = this.purchases;
+				console.log(this.purchases);
+				this.$.bag.render();
+			}
 		});
 	</script>
 </dom-module>

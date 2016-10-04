@@ -1,6 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../bower_components/app-route/app-route.html">
 
 <dom-module id="com-cart">
 	<style>
@@ -50,13 +52,16 @@
 			text-align: right;
 			margin-top: 20px;
 		}
+		a{
+			text-decoration: none;
+		}
 		@media(max-width: 600px){
-			.item{
+			.itemd{
 				display: block;
 				height: unset;
 				text-align: center;
 			}
-			.item img{
+			.itemd img{
 				/*height:100px;*/
 				width: 100%;
 			}
@@ -69,25 +74,33 @@
 		}
 	</style>
 	<template>
+	<app-location route="{{route}}"></app-location>
+	<app-route
+		route="{{route}}"
+		pattern="/:page"
+		data="{{data}}"
+		tail="{{tail}}">
 	<div class="container">
 		<paper-material elevation="1" class="Box">
 			<div class="cartbox">
-				<h3>Your Cart</h3>
-				<div class="itemd">
-					<img src="../../images/shoe1.jpg">
-					<div class="subitems">
-						<p>Nike awesome</p>
-						<p>Size</p>
-						<p>Price</p>
-						<div class="button">
-						<paper-button>REMOVE</paper-button>
-					</div>
+				<h3 id="re">Your Cart</h3>
+					<template is="dom-repeat" items="{{somedata}}" id="bag" filter="hello">
+					<div class="itemd">
+						<img src="{{item.thumbnail}}">
+						<div class="subitems">
+							<p>{{item.name}}</p>
+							<p>&#8377; {{item.price}}</p>
+							<div class="button">
+							<paper-button>REMOVE</paper-button>
+						</div>
 					</div>
 				</div>
+				</template>
 			</div>
 		</paper-material>
 		<div class="checkout-container" id="rem">
-			<paper-button>Proceed to checkout</paper-button>
+			<paper-button id="re">Update cart</paper-button>
+			<a href="#/payment"><paper-button>Proceed to checkout</paper-button></a>
 		</div>
 	</div>
 	</template>
@@ -96,16 +109,53 @@
 		is:'com-cart',
 		properties:{
 			cartitems:{
-				type: Object,
+				type: Array,
+				reflectToAttribute:true,
+				notify: true
+			},
+			somedata:{
+				type: Array,
 				reflectToAttribute:true,
 				notify: true
 			}
 		},
-		ready: function(){
-			// alert(this.cartitems);
+		listeners:{
+			're.tap':'rei'
 		},
-		cc: function(){
-			alert(JSON.stringify(this.cartitems));
+		ready: function(){
+			var self = this;
+			this.$.bag.render();
+		},
+		attributeChanged:function(){
+			// this.somedata = this.selected;			
+			this.$.bag.render();
+		},
+		hello: function(){
+			var i=0;
+			// alert("hello");
+			for(i=0;i<this.somedata.length;i++)
+				console.log(this.somedata[i]);
+			return true;
+		},
+		rei: function(){
+			// this.$.bag.render();
+			var self=this;
+			// alert('render complete');
+			// this.cartitems = [
+			// 	{
+			// 		name:"Fila CASTELLO Running Shoes  (Grey)",
+			// 		thumbnail: "../../images/shoe1.jpg",
+			// 		price : 100
+			// 	},
+			// 	{
+			// 		name:"Nike REVOLUTION 2 MSL Running Shoes",
+			// 		thumbnail: "../../images/11453714724583-Nike-Men-Grey-Flex-Supreme-TR-4-Training-Shoes-3961453714724393-4.jpg",
+			// 		price : 200
+			// 	}
+			// ];
+			// alert(self.somedata);
+			this.somedata = this.cartitems;
+			// alert(this.somedata);
 		}
 	});
 </script>

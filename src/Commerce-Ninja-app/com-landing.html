@@ -15,13 +15,16 @@
 			display: flex;
 			flex-wrap: wrap;
 		}
-		.hot-deals paper-card{
+		.hot-deals a {
 			margin: auto;
 			width: 30%;
 		}
 		.container{
 			width: 80%;
 			margin: auto;
+		}
+		a{
+			text-decoration: none;
 		}
 		@media(max-width: 800px){
 			h2{
@@ -35,7 +38,7 @@
 				display: block;
 				text-align: center;
 			}
-			.hot-deals paper-card{
+			.hot-deals a{
 				width: 90%;
 				display: block;
 				margin-top: 10px;
@@ -70,9 +73,9 @@
 			<div class="container">
 			<h2>Hot Deals!</h2>
 			<div class="hot-deals">
-				<paper-card elevation="2" image="../../images/off.png"></paper-card>
-				<paper-card elevation="2" image="../../images/off2.png"></paper-card>
-				<paper-card elevation="2" image="../../images/off3.png"></paper-card>
+				<a href="#/products"><paper-card elevation="2" image="../../images/off.png"></paper-card></a>
+				<a href="#/products"><paper-card elevation="2" image="../../images/off2.png"></paper-card></a>
+				<a href="#/products"><paper-card elevation="2" image="../../images/off3.png"></paper-card></a>
 			</div>
 			</div>
 		</section>

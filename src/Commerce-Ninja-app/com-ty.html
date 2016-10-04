@@ -17,7 +17,7 @@
 			display: flex;
 			height: 100px;
 		}
-		.item img{
+		.itemd img{
 			height: 100%;
 		}
 		.subitems{
@@ -31,16 +31,57 @@
 			width: 100%;
 			text-align: center;
 		}
+		.itemd{
+			width: 100%;
+			display: flex;
+			height: 150px;
+			background-color: white;
+		}
+		.subitems{
+			width: 100%;
+			display: flex;
+			margin: auto;
+		}
+		.subitems *{
+			margin: auto;
+		}
+		p{
+			font-size: 20px;
+		}
+
+		.continue{
+			text-align: center;
+			margin: auto;
+			float: right;
+			
+		}
+		@media(max-width:800px){
+			.itemd{
+				display: block;
+				height: unset;
+				text-align: center;
+			}
+			.itemd img{
+				/*height:100px;*/
+				width: 100%;
+			}
+			.subitems{
+				display: block;
+			}
+			p{
+				padding: 10px;
+			}
+		}
 	</style>
 	<template>
 		<div class="container">
 			<h1>Thank you for shopping with us, Username!</h1>
 			<p>An email has been sent to example@gmail.com which contains invoice.</p>
 			<paper-card class="order-card">
-				<div>
+				<div class="cartbox">
 					<h2>Order Summary</h2>
 					<hr>
-					<div class="item">
+					<div class="itemd">
 						<img src="../../images/shoe1.jpg">
 						<div class="subitems">
 							<p>Nike awesome</p>
@@ -50,6 +91,9 @@
 					</div>
 				</div>
 			</paper-card>
+			<div class="continuebutton">
+				<a href="#/"><paper-button raised class="continue">Continue Shopping</paper-button></a>
+			</div>
 		</div>
 	</template>
 	<script>
