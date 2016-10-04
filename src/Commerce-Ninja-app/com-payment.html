@@ -64,7 +64,6 @@
 			text-align: center;
 		}
 
-
 		.item{
 			display: flex;
 			height: 100px;
@@ -118,11 +117,10 @@
 			margin-top: 10px;
 		}
 		.total{
-			
+			display: flex;
 			padding-left: 10px;
 			width: auto;
-			font-size: 150%;
-			
+			font-size: 15px;			
 		}
 		.itemd{
 			width: 100%;
@@ -133,7 +131,7 @@
 		.itemd img{
 			height: 100%;
 		}
-		@media(max-width: 600px){
+		@media(max-width: 800px){
 			.left{
 				display: block;
 				width: 100%;
@@ -205,7 +203,7 @@
 					</div>
 					<div class="credit_card">
 						<div class="credit_head">
-							<h3>PAYAMENT</h3>
+							<h3>PAYMENT</h3>
 						</div>	
 							<div class="promodiv">
 
@@ -251,6 +249,7 @@
 				</div>
 				<div class="total">
 						<h5 id="bc">Total :&#8377; {{total}}</h5>
+						<paper-button id="bc">Update cart</paper-button>
 				</div>
 			</paper-card>
 			</div>
@@ -266,7 +265,7 @@
 			is: 'com-payment',
 			properties: {
 				purchases:{
-					type:String,
+					type:Object,
 					reflectToAttribute:true,
 					notify: true
 				}
@@ -278,7 +277,7 @@
 				this.total=0;
 			},
 			totl: function(item){
-				alert(item.price);
+				// alert(item.price);
 				this.total += parseInt(item.price);
 				return true;
 			},

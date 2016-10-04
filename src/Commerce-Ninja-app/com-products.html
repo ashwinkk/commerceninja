@@ -57,7 +57,7 @@
 			flex-wrap: wrap;
 		}
 		.filter-list{
-			width: 280px;
+			width: 20%;
 			height: auto;
 		}
 		.product-list{
@@ -90,6 +90,44 @@
 		.items{
 			display: flex;
 		}
+
+		@media( max-width: 1300px){
+			.product-list{
+				flex-grow: 2;
+				width: 50%;
+			}
+			.shoe{
+				width: 50%;
+			}
+			.filter-list{
+				width: 30%;
+			}
+		}
+
+		@media(max-width: 800px){
+			p{
+				font-size: 15px;
+			}
+			.product-list{
+				width: 100%;
+				margin: auto;
+			}
+			.filter-list{
+				width: 100%;
+				display: block;
+				margin-top: 20px;
+				display: none;
+			}
+			#filters{
+				display: block;
+			}
+			.shoe{
+				margin:auto;					
+				margin-top: 20px;
+				width: 40%;
+			}
+		}
+
 		@media(max-width: 600px){
 			.product-list{
 				width: 100%;
@@ -113,14 +151,11 @@
 				flex-wrap: wrap;
 			}
 			.shoe{
-				margin-left: 10%;
+				margin-top: 10px;
 			}
 			.shoecontainer{
 				display:block;
 				width: 100%;
-			}
-			.filter-list{
-				
 			}
 			.product-list .shoe{
 				width: 100%;
@@ -129,6 +164,7 @@
 				display: block;
 			}
 		}
+
 	</style>
 	<template>
 		<div class="container">
@@ -173,7 +209,7 @@
 				<div class="product-list" id="list">
 					<template is="dom-repeat" items="{{filteredShoes}}" id="shoelist">
 					<paper-material class="shoe" elevation="0">
-							<p style="opacity:0;height:0">{{item.id}}</p>
+							<p style="opacity:0;height:0;position:absolute;">{{item.id}}</p>
 							<a href="#/product-detail"><img src="{{item.thumbnail}}"></a>
 							<small>  {{item.name}}<br>&#8377; {{item.price}} </small> 
 							<paper-button>Add to cart</paper-button>
@@ -203,13 +239,17 @@
 				'men.tap' : 'change_type2',
 				'women.tap' : 'change_type2',
 				'kids.tap' : 'change_type2',
-				'filters.tap':'showfilters',
-
+				'filters.tap':'showfilters'
 			},
 
 			properties:{
 				selected:{
 					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				},
+				goto:{
+					type: Object,
 					reflectToAttribute:true,
 					notify: true
 				}
@@ -219,12 +259,18 @@
 				var elem = e.target;
 				if(elem.tagName=='PAPER-BUTTON'){
 					var par = elem.parentElement;
-					var id = par.children[0].innerHTML;					
+					var id = par.children[0].innerHTML;
 					// alert(JSON.stringify(this.shoes[parseInt(id)-1]));
 					this.push('selected',this.shoes[parseInt(id)-1]);
 					// this.selected[this.selected.length] = (this.shoes[parseInt(id)-1]);
 					console.log(this.selected);
 					// alert(this.selected);		
+				}
+				else if(elem.tagName=='IMG'){
+					var par = elem.parentElement.parentElement;
+					var id = par.children[0].innerHTML;
+					this.goto = this.shoes[parseInt(id)-1];
+					console.log("product:"+JSON.stringify(this.goto));
 				}
 			},
 

@@ -26512,7 +26512,7 @@ Custom property | Description | Default
 			flex-wrap: wrap;
 		}
 		.filter-list{
-			width: 280px;
+			width: 20%;
 			height: auto;
 		}
 		.product-list{
@@ -26545,6 +26545,44 @@ Custom property | Description | Default
 		.items{
 			display: flex;
 		}
+
+		@media( max-width: 1300px){
+			.product-list{
+				flex-grow: 2;
+				width: 50%;
+			}
+			.shoe{
+				width: 50%;
+			}
+			.filter-list{
+				width: 30%;
+			}
+		}
+
+		@media(max-width: 800px){
+			p{
+				font-size: 15px;
+			}
+			.product-list{
+				width: 100%;
+				margin: auto;
+			}
+			.filter-list{
+				width: 100%;
+				display: block;
+				margin-top: 20px;
+				display: none;
+			}
+			#filters{
+				display: block;
+			}
+			.shoe{
+				margin:auto;					
+				margin-top: 20px;
+				width: 40%;
+			}
+		}
+
 		@media(max-width: 600px){
 			.product-list{
 				width: 100%;
@@ -26568,14 +26606,11 @@ Custom property | Description | Default
 				flex-wrap: wrap;
 			}
 			.shoe{
-				margin-left: 10%;
+				margin-top: 10px;
 			}
 			.shoecontainer{
 				display:block;
 				width: 100%;
-			}
-			.filter-list{
-				
 			}
 			.product-list .shoe{
 				width: 100%;
@@ -26584,6 +26619,7 @@ Custom property | Description | Default
 				display: block;
 			}
 		}
+
 	</style>
 	<template>
 		<div class="container">
@@ -26628,7 +26664,7 @@ Custom property | Description | Default
 				<div class="product-list" id="list">
 					<template is="dom-repeat" items="{{filteredShoes}}" id="shoelist">
 					<paper-material class="shoe" elevation="0">
-							<p style="opacity:0;height:0">{{item.id}}</p>
+							<p style="opacity:0;height:0;position:absolute;">{{item.id}}</p>
 							<a href="#/product-detail"><img src="{{item.thumbnail}}"></a>
 							<small>  {{item.name}}<br>₹ {{item.price}} </small> 
 							<paper-button>Add to cart</paper-button>
@@ -26658,13 +26694,17 @@ Custom property | Description | Default
 				'men.tap' : 'change_type2',
 				'women.tap' : 'change_type2',
 				'kids.tap' : 'change_type2',
-				'filters.tap':'showfilters',
-
+				'filters.tap':'showfilters'
 			},
 
 			properties:{
 				selected:{
 					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				},
+				goto:{
+					type: Object,
 					reflectToAttribute:true,
 					notify: true
 				}
@@ -26674,12 +26714,18 @@ Custom property | Description | Default
 				var elem = e.target;
 				if(elem.tagName=='PAPER-BUTTON'){
 					var par = elem.parentElement;
-					var id = par.children[0].innerHTML;					
+					var id = par.children[0].innerHTML;
 					// alert(JSON.stringify(this.shoes[parseInt(id)-1]));
 					this.push('selected',this.shoes[parseInt(id)-1]);
 					// this.selected[this.selected.length] = (this.shoes[parseInt(id)-1]);
 					console.log(this.selected);
 					// alert(this.selected);		
+				}
+				else if(elem.tagName=='IMG'){
+					var par = elem.parentElement.parentElement;
+					var id = par.children[0].innerHTML;
+					this.goto = this.shoes[parseInt(id)-1];
+					console.log("product:"+JSON.stringify(this.goto));
 				}
 			},
 
@@ -29958,7 +30004,6 @@ respectively.
 			text-align: center;
 		}
 
-
 		.item{
 			display: flex;
 			height: 100px;
@@ -30012,11 +30057,10 @@ respectively.
 			margin-top: 10px;
 		}
 		.total{
-			
+			display: flex;
 			padding-left: 10px;
 			width: auto;
-			font-size: 150%;
-			
+			font-size: 15px;			
 		}
 		.itemd{
 			width: 100%;
@@ -30027,7 +30071,7 @@ respectively.
 		.itemd img{
 			height: 100%;
 		}
-		@media(max-width: 600px){
+		@media(max-width: 800px){
 			.left{
 				display: block;
 				width: 100%;
@@ -30099,7 +30143,7 @@ respectively.
 					</div>
 					<div class="credit_card">
 						<div class="credit_head">
-							<h3>PAYAMENT</h3>
+							<h3>PAYMENT</h3>
 						</div>	
 							<div class="promodiv">
 
@@ -30145,6 +30189,7 @@ respectively.
 				</div>
 				<div class="total">
 						<h5 id="bc">Total :₹ {{total}}</h5>
+						<paper-button id="bc">Update cart</paper-button>
 				</div>
 			</paper-card>
 			</div>
@@ -30160,7 +30205,7 @@ respectively.
 			is: 'com-payment',
 			properties: {
 				purchases:{
-					type:String,
+					type:Object,
 					reflectToAttribute:true,
 					notify: true
 				}
@@ -30172,7 +30217,7 @@ respectively.
 				this.total=0;
 			},
 			totl: function(item){
-				alert(item.price);
+				// alert(item.price);
 				this.total += parseInt(item.price);
 				return true;
 			},
@@ -30197,7 +30242,7 @@ respectively.
 			transform: translateX(-50%);
 		}
 		.details{
-			width: 100%;
+			width: 50%;
 			margin: auto;
 			margin-left: 5%;
 			padding-left: 30%;
@@ -30247,8 +30292,8 @@ respectively.
 				left: unset;
 			}
 			.details{
-				width: 100%;
-				margin: 0;
+				width: 90%;
+				margin: auto;
 				padding: 0;
 				text-align: center;
 			}
@@ -30284,12 +30329,12 @@ respectively.
 	</style>
 	<template>
 		<div class="container">
-			<img src="images/sandals.jpg">
+			<img src="{{product.thumbnail}}">
 			<div class="heading">
-				<h2>Puma Windbreaker FlipFlops</h2>	
+				<h2 id="rem">{{product.name}}</h2>	
 				<div class="details">
-					<p><b>Color</b>:Orange</p>
-					<p><b>Material</b>:Synthetic Rubber</p>
+					<p><b>Brand</b>:{{product.brand}}</p>
+					<p><b>Description</b>:{{product.description}}</p>
 					<paper-dropdown-menu label="Size" class="size">
 		  				<paper-listbox class="dropdown-content">
 						    <paper-item>6</paper-item>
@@ -30299,23 +30344,48 @@ respectively.
 		 				</paper-listbox>
 					</paper-dropdown-menu>
 					<div class="buttons">
-						<a><paper-button raised="">Add to Cart</paper-button></a>
-						<a href="#/payment"><paper-button raised="">Buy Now</paper-button></a>
+						<a><paper-button raised="" id="tocart">Add to Cart</paper-button></a>
+						<a href="#/payment"><paper-button id="topay" raised="">Buy Now</paper-button></a>
 					</div>
 				</div>	
 			</div>		
 		</div>
-		<h2>You may also Like</h2>
-		<div class="similar">
-			<img src="images/shoe1.jpeg">
-			<img src="images/shoe1.jpeg">
-			<img src="images/shoe1.jpeg">
-			<img src="images/shoe1.jpeg">
-		</div>
 	</template>
 	<script>
 		Polymer({
-			is:'com-product-detail'
+			is:'com-product-detail',
+			listeners:{
+				'rem.tap': 'cliked',
+				'tocart.tap': 'addToCart',
+				'topay.tap': 'checkout'
+			},
+			properties:{
+				product:{
+					type: Object,
+					notify: true,
+					reflectToAttribute:true
+				},
+				cart:{
+					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				},
+				buy:{
+					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				}
+			},
+			addToCart: function(){
+				alert("clc");
+				this.push('cart',this.product);
+			},
+			checkout: function(){
+				this.push('buy',this.product);
+			},
+			cliked : function(){
+				alert(this.product);
+			}
 		});
 	</script>
 </dom-module><dom-module id="Commerce-Ninja-app" assetpath="src/Commerce-Ninja-app/">
@@ -30333,11 +30403,11 @@ respectively.
     </app-route>
     <iron-pages attr-for-selected="name" selected="{{route.path}}">
       <com-landing name="/"></com-landing>
-      <com-products selected="{{communicator}}" name="/products"></com-products>
+      <com-products goto="{{selectedProduct}}" selected="{{communicator}}" name="/products"></com-products>
       <com-cart cartitems="{{communicator}}" somedata="{{carted}}" name="/cart"></com-cart>
       <com-ty myorders="{{carted}}" name="/ty"></com-ty>
       <com-payment purchases="{{carted}}" name="/payment"></com-payment>
-      <com-product-detail name="/product-detail">
+      <com-product-detail cart="{{communicator}}" product="{{selectedProduct}}" buy="{{carted}}" name="/product-detail">
     </com-product-detail></iron-pages>
   </template>
 
@@ -30357,6 +30427,7 @@ respectively.
         ready: function(){
           this.communicator=[];
           this.carted = [];
+          this.selectedProduct = {};
           // alert(this.route.path);
           if(this.route.path==""){
             location.href += "#/";

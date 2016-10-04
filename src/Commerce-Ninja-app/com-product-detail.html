@@ -17,7 +17,7 @@
 			transform: translateX(-50%);
 		}
 		.details{
-			width: 100%;
+			width: 50%;
 			margin: auto;
 			margin-left: 5%;
 			padding-left: 30%;
@@ -67,8 +67,8 @@
 				left: unset;
 			}
 			.details{
-				width: 100%;
-				margin: 0;
+				width: 90%;
+				margin: auto;
 				padding: 0;
 				text-align: center;
 			}
@@ -104,12 +104,12 @@
 	</style>
 	<template>
 		<div class="container">
-			<img src="../../images/sandals.jpg">
+			<img src="{{product.thumbnail}}">
 			<div class="heading">
-				<h2>Puma Windbreaker FlipFlops</h2>	
+				<h2 id="rem">{{product.name}}</h2>	
 				<div class="details">
-					<p><b>Color</b>:Orange</p>
-					<p><b>Material</b>:Synthetic Rubber</p>
+					<p><b>Brand</b>:{{product.brand}}</p>
+					<p><b>Description</b>:{{product.description}}</p>
 					<paper-dropdown-menu label="Size" class="size">
 		  				<paper-listbox class="dropdown-content">
 						    <paper-item>6</paper-item>
@@ -119,23 +119,48 @@
 		 				</paper-listbox>
 					</paper-dropdown-menu>
 					<div class="buttons">
-						<a><paper-button raised>Add to Cart</paper-button></a>
-						<a href="#/payment"><paper-button raised>Buy Now</paper-button></a>
+						<a><paper-button raised id="tocart">Add to Cart</paper-button></a>
+						<a href="#/payment"><paper-button id="topay" raised>Buy Now</paper-button></a>
 					</div>
 				</div>	
 			</div>		
 		</div>
-		<h2>You may also Like</h2>
-		<div class="similar">
-			<img src="../../images/shoe1.jpeg">
-			<img src="../../images/shoe1.jpeg">
-			<img src="../../images/shoe1.jpeg">
-			<img src="../../images/shoe1.jpeg">
-		</div>
 	</template>
 	<script>
 		Polymer({
-			is:'com-product-detail'
+			is:'com-product-detail',
+			listeners:{
+				'rem.tap': 'cliked',
+				'tocart.tap': 'addToCart',
+				'topay.tap': 'checkout'
+			},
+			properties:{
+				product:{
+					type: Object,
+					notify: true,
+					reflectToAttribute:true
+				},
+				cart:{
+					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				},
+				buy:{
+					type: Array,
+					reflectToAttribute:true,
+					notify: true
+				}
+			},
+			addToCart: function(){
+				alert("clc");
+				this.push('cart',this.product);
+			},
+			checkout: function(){
+				this.push('buy',this.product);
+			},
+			cliked : function(){
+				alert(this.product);
+			}
 		});
 	</script>
 </dom-module>
