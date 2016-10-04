@@ -3,6 +3,9 @@
 
 <dom-module id="com-ty">
 	<style>
+		a{
+			text-decoration: none;
+		}
 		.container{
 			max-width: 980px;
 			margin: auto;
@@ -52,8 +55,10 @@
 		.continue{
 			text-align: center;
 			margin: auto;
-			float: right;
 			
+		}
+		.continuebutton{
+			text-align: center;
 		}
 		@media(max-width:800px){
 			.itemd{
@@ -77,20 +82,6 @@
 		<div class="container">
 			<h1>Thank you for shopping with us, Username!</h1>
 			<p>An email has been sent to example@gmail.com which contains invoice.</p>
-			<paper-card class="order-card">
-				<div class="cartbox">
-					<h2>Order Summary</h2>
-					<hr>
-					<div class="itemd">
-						<img src="../../images/shoe1.jpg">
-						<div class="subitems">
-							<p>Nike awesome</p>
-							<p>Price</p>
-							<paper-button>Remove</paper-button>
-						</div>
-					</div>
-				</div>
-			</paper-card>
 			<div class="continuebutton">
 				<a href="#/"><paper-button raised class="continue">Continue Shopping</paper-button></a>
 			</div>
