@@ -80,19 +80,19 @@
 		<paper-toolbar class="toolbar">
 			<div class="container">
 				<div>
-					<a href="#/products"><paper-button noink style="color:black;">Men</paper-button></a>
+					<a href="#/products"><paper-button id="men" noink style="color:black;">Men</paper-button></a>
 				</div>
 				<div>
-					<a href="#/products"><paper-button noink style="color:black;">Women</paper-button></a>
+					<a href="#/products"><paper-button id="women" noink style="color:black;">Women</paper-button></a>
 				</div>
 				<div>
 					<a href="#/"><img class="logo" src="../../images/logo.png"></a>
 				</div>
 				<div>
-					<a href="#/products"><paper-button noink style="color:black;">Kids</paper-button></a>
+					<a href="#/products"><paper-button id="kids" noink style="color:black;">Kids</paper-button></a>
 				</div>
 				<div>
-					<a href="#/cart"><paper-button noink style="color:black;">Bag(0)</paper-button></a>
+					<a href="#/cart"><paper-button noink style="color:black;" id="c">Bag({{cart}})</paper-button></a>
 				</div>
 			</div>
 		</paper-toolbar>
@@ -100,7 +100,29 @@
 	<script>
 		Polymer({
 			is:'com-header',
-			
+			listeners:{
+				'men.tap' : 'apply',
+				'women.tap' : 'apply',
+				'kids.tap' : 'apply'
+			},
+			properties:{
+				cart:{
+					type: Number,
+					reflectToAttribute: true,
+					notify: true,
+					value: 0
+				},
+				filter:{
+					type: String,
+					reflectToAttribute: true,
+					notify: true,
+					value: null
+				}
+			},
+			apply: function(elt){
+				this.filter = elt.target.textContent.trim().toLowerCase();
+				// alert(this.filter);
+			}
 		});
 	</script>
 </dom-module>

@@ -167,9 +167,13 @@
 			}
 			.subitems{
 				display: block;
+				font-size: 20px;
 			}
 			p{
 				padding: 10px;
+			}
+			.total{
+				font-size: 20px;
 			}
 		}
 
@@ -240,16 +244,12 @@
 						<div class="subitems">
 							<p>{{item.name}}</p>
 							<p>&#8377; {{item.price}}</p>
-							<div class="button">
-							<paper-button>REMOVE</paper-button>
-						</div>
 					</div>
 				</div>
 				</template>
 				</div>
 				<div class="total">
 						<h5 id="bc">Total :&#8377; {{total}}</h5>
-						<paper-button id="bc">Update cart</paper-button>
 				</div>
 			</paper-card>
 			</div>
@@ -258,7 +258,7 @@
 		<div class="continue_button">
 			<a href="#/ty"><paper-button class="buttonc" raised>CONTINUE</paper-button></a>
 		</div>
-		
+		<com-footer></com-footer>
 	</template>
 	<script>
 		Polymer({

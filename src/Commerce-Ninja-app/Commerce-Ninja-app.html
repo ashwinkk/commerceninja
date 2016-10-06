@@ -20,7 +20,7 @@
         display: block;
       }
     </style>
-    <com-header></com-header>
+    <com-header cart="{{communicator.length}}" filter="{{selectedFilter}}"></com-header>
     <app-location route="{{route}}" use-hash-as-path></app-location>
     <app-route
       route="{{route}}"
@@ -30,10 +30,10 @@
     </app-route>
     <iron-pages attr-for-selected="name" selected="{{route.path}}">
       <com-landing name="/"></com-landing>
-      <com-products goto="{{selectedProduct}}" selected="{{communicator}}" name="/products"></com-products>
-      <com-cart cartitems="{{communicator}}" somedata="{{carted}}"name="/cart"></com-cart>
-      <com-ty myorders="{{carted}}" name="/ty"></com-ty>
-      <com-payment purchases="{{carted}}" name="/payment"></com-payment>
+      <com-products selectedfilter="{{selectedFilter}}" goto="{{selectedProduct}}" selected="{{communicator}}" name="/products"></com-products>
+      <com-cart cartitems="{{communicator}}" name="/cart"></com-cart>
+      <com-ty myorders="{{communicator}}" name="/ty"></com-ty>
+      <com-payment purchases="{{communicator}}" name="/payment"></com-payment>
       <com-product-detail cart="{{communicator}}" product="{{selectedProduct}}" buy="{{carted}}" name="/product-detail"></com-product-details>
     </iron-pages>
   </template>
@@ -43,18 +43,20 @@
         is: 'Commerce-Ninja-app',
         properties:{
           path:{
-            type:String,
-            reflectToAttribute:true,
-            observer:'setInitPath'
+            type: String,
+            reflectToAttribute: true,
+            observer: 'setInitPath'
           }
         },
         observers:[
           'pageInit(routeData.path)'
         ],
         ready: function(){
+          this.selectedFilter = "";
           this.communicator=[];
           this.carted = [];
           this.selectedProduct = {};
+          this.cartCount=0;
           // alert(this.route.path);
           if(this.route.path==""){
             location.href += "#/";

@@ -1,0 +1,75 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+
+<dom-module id="com-footer">
+	<style>
+	:host{
+		display: block;
+		width: 100%;
+		background-color: #b9431b;
+		color: white;
+		margin-top: 10px;
+		bottom: 0;
+		/*transform: translateY(-100%);*/
+	}
+	h3{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.footer{
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+		width: 80%;
+		margin: auto;
+	}
+	.details{
+		display: flex;
+		display: flex;
+	}
+	.links{
+		margin: auto;
+		width: 30%;
+		text-align: center;
+	}
+	paper-input{
+		color: white;
+	}
+	</style>
+	<style is="custom-style">
+		:root{
+			--paper-input-container-color: white;
+			--paper-input-container-focus-color: white;
+			--paper-input-container-input-color: white;
+		}
+	</style>
+	<template>
+		<div class="footer">
+			<h3>We are bunch of passionate guys working to achieve our dreams</h3>
+			<div class="details">
+				<div class="links">
+					<h3>Products</h3>
+					<p>Shoes</p>
+					<p>Kids</p>
+					<p>Men</p>
+					<p>Women</p>
+				</div>
+				<div class="links">
+					<h3>Have any queries or would like to encourage us?</h3>
+					<p>Coutact us on example@gmail.com</p>
+				</div>
+				<div class="links">
+					<h3>Get weekly newsletter and updates of latest products available</h3>
+					<paper-input label="email" ></paper-input>
+				</div>
+			</div>
+			<h3>Solesense &copy; 2016</h3>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is:'com-footer'
+		});
+	</script>
+</dom-module>

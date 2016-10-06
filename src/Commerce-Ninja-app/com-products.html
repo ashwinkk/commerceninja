@@ -13,6 +13,7 @@
 	<style>
 		:host{
 			display:block;
+			position: relative;
 		}
 		h1{
 			width: 100%;
@@ -174,7 +175,7 @@
 			<div class="shoecontainer" id="shoes">
 				<div class="filter-list" id="filter-list">
 								<paper-material class="shoetype1">
-						<p> <strong> Shoe Type </strong> </p>
+						<p id="ctype"> <strong> Shoe Type </strong> </p>
 						<paper-checkbox id="casual" value="casual">
 							Casual Shoes
 						</paper-checkbox>
@@ -218,10 +219,7 @@
 				</div>
 			</div>
 		</div>
-		<paper-dialog id="dialog">
-			<img src="{{modalImage}}">
-			<p>{{modalName}}</p>
-		</paper-dialog>
+		<com-footer></com-footer>
 	</template>
 	<script>
 		Polymer({
@@ -239,19 +237,36 @@
 				'men.tap' : 'change_type2',
 				'women.tap' : 'change_type2',
 				'kids.tap' : 'change_type2',
-				'filters.tap':'showfilters'
+				'filters.tap':'showfilters',
 			},
 
 			properties:{
 				selected:{
 					type: Array,
 					reflectToAttribute:true,
-					notify: true
+					notify: true,
+					value: []
 				},
 				goto:{
 					type: Object,
 					reflectToAttribute:true,
-					notify: true
+					notify: true,
+					value : {}
+				},
+				selectedfilter:{
+					type: String,
+					notify: true,
+					reflectToAttribute: true,
+					value: null
+				}
+			},
+
+			attributeChanged: function(){
+				if(this.filters)
+					this.filters.type2 = [];
+				if(this.selectedfilter){
+					this.filters.type2.push(this.selectedfilter);
+					this.fil();
 				}
 			},
 
@@ -260,11 +275,8 @@
 				if(elem.tagName=='PAPER-BUTTON'){
 					var par = elem.parentElement;
 					var id = par.children[0].innerHTML;
-					// alert(JSON.stringify(this.shoes[parseInt(id)-1]));
 					this.push('selected',this.shoes[parseInt(id)-1]);
-					// this.selected[this.selected.length] = (this.shoes[parseInt(id)-1]);
-					console.log(this.selected);
-					// alert(this.selected);		
+					console.log(this.selected);	
 				}
 				else if(elem.tagName=='IMG'){
 					var par = elem.parentElement.parentElement;
@@ -283,8 +295,10 @@
 					size  : [],
 					type2 : [],
 				};
-
-				this.filteredShoes = [];
+				this.filters.type2.push(this.selectedfilter);
+				if(this.filteredShoes)
+					this.filteredShoes = [];
+				// alert(this.selectedfilter);
 
 				this.$.range.addEventListener("value-change",
 						function(event){
@@ -298,7 +312,8 @@
 				$.get('../../database/shoes.json',
 					function(data){
 						self.shoes=data;	
-						self.filteredShoes = self.shoes;				
+						self.filteredShoes = self.shoes;
+						self.fil();			
 				});
 
 				

@@ -55,6 +55,13 @@
 		a{
 			text-decoration: none;
 		}
+		.invisible{
+			opacity: 0;
+			position: absolute;
+		}
+		.itemname{
+			width: 50%;
+		}
 		@media(max-width: 600px){
 			.itemd{
 				display: block;
@@ -82,16 +89,17 @@
 		tail="{{tail}}">
 	<div class="container">
 		<paper-material elevation="1" class="Box">
-			<div class="cartbox">
+			<div class="cartbox" id="cartbox">
 				<h3 id="re">Your Cart</h3>
-					<template is="dom-repeat" items="{{somedata}}" id="bag" filter="hello">
+					<template is="dom-repeat" items="{{cartitems}}" id="bag" >
 					<div class="itemd">
 						<img src="{{item.thumbnail}}">
 						<div class="subitems">
-							<p>{{item.name}}</p>
+							
+							<p class="itemname">{{item.name}}</p>
 							<p>&#8377; {{item.price}}</p>
 							<div class="button">
-							<paper-button>REMOVE</paper-button>
+							<paper-button on-tap="removeArr"><span>REMOVE</span><span class="invisible">{{index}}</span></paper-button>
 						</div>
 					</div>
 				</div>
@@ -99,10 +107,10 @@
 			</div>
 		</paper-material>
 		<div class="checkout-container" id="rem">
-			<paper-button id="re">Update cart</paper-button>
-			<a href="#/payment"><paper-button>Proceed to checkout</paper-button></a>
+			<paper-button id="toCheckout"><a href="#/payment">Proceed to checkout</a></paper-button>
 		</div>
 	</div>
+	<com-footer></com-footer>
 	</template>
 <script>
 	Polymer({
@@ -111,51 +119,31 @@
 			cartitems:{
 				type: Array,
 				reflectToAttribute:true,
-				notify: true
-			},
-			somedata:{
-				type: Array,
-				reflectToAttribute:true,
-				notify: true
+				notify: true,
+				value: []
 			}
-		},
-		listeners:{
-			're.tap':'rei'
 		},
 		ready: function(){
 			var self = this;
 			this.$.bag.render();
+			if(this.cartitems.length==0)
+				this.$.toCheckout.disabled = true;
+			// alert(this.$.bag.content.querySelector('.remove'));
 		},
 		attributeChanged:function(){
-			// this.somedata = this.selected;			
+			if(this.cartitems.length>0)
+				this.$.toCheckout.disabled = false; 
+			else
+				this.$.toCheckout.disabled = true; 
 			this.$.bag.render();
 		},
-		hello: function(){
-			var i=0;
-			// alert("hello");
-			for(i=0;i<this.somedata.length;i++)
-				console.log(this.somedata[i]);
-			return true;
-		},
-		rei: function(){
-			// this.$.bag.render();
-			var self=this;
-			// alert('render complete');
-			// this.cartitems = [
-			// 	{
-			// 		name:"Fila CASTELLO Running Shoes  (Grey)",
-			// 		thumbnail: "../../images/shoe1.jpg",
-			// 		price : 100
-			// 	},
-			// 	{
-			// 		name:"Nike REVOLUTION 2 MSL Running Shoes",
-			// 		thumbnail: "../../images/11453714724583-Nike-Men-Grey-Flex-Supreme-TR-4-Training-Shoes-3961453714724393-4.jpg",
-			// 		price : 200
-			// 	}
-			// ];
-			// alert(self.somedata);
-			this.somedata = this.cartitems;
-			// alert(this.somedata);
+		removeArr : function(e){
+			var elt = e.target;
+			if(elt.tagName!='PAPER-BUTTON')
+				elt=elt.parentNode;
+			var index = (elt.children[1].innerHTML);
+			this.splice('cartitems',index,1);
+			this.$.bag.render;
 		}
 	});
 </script>
