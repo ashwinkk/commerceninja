@@ -36,6 +36,20 @@
 	paper-input{
 		color: white;
 	}
+	paper-button{
+		color: white;
+	}
+	@media(max-width: 600px){
+		.details{
+			display: block;
+		}
+		.links *{
+			margin: auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			display: none;
+		}
+	}
 	</style>
 	<style is="custom-style">
 		:root{
@@ -46,7 +60,7 @@
 	</style>
 	<template>
 		<div class="footer">
-			<h3>We are bunch of passionate guys working to achieve our dreams</h3>
+			<h3>About the company</h3>
 			<div class="details">
 				<div class="links">
 					<h3>Products</h3>
@@ -57,11 +71,12 @@
 				</div>
 				<div class="links">
 					<h3>Have any queries or would like to encourage us?</h3>
-					<p>Coutact us on example@gmail.com</p>
+					<p>Contact us on example@gmail.com</p>
 				</div>
 				<div class="links">
 					<h3>Get weekly newsletter and updates of latest products available</h3>
 					<paper-input label="email" ></paper-input>
+					<paper-button >Submit</paper-button>
 				</div>
 			</div>
 			<h3>Solesense &copy; 2016</h3>

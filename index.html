@@ -2,6 +2,7 @@
     <title>Commerce-Ninja</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#b1afa3">
     <link rel="manifest" href="/manifest.json">
     <link rel="shortcut icon" href="images/logo.png">
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js">/**
@@ -21927,6 +21928,20 @@ style this element.
 	paper-input{
 		color: white;
 	}
+	paper-button{
+		color: white;
+	}
+	@media(max-width: 600px){
+		.details{
+			display: block;
+		}
+		.links *{
+			margin: auto;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			display: none;
+		}
+	}
 	</style>
 	<style is="custom-style">
 		:root{
@@ -21937,7 +21952,7 @@ style this element.
 	</style>
 	<template>
 		<div class="footer">
-			<h3>We are bunch of passionate guys working to achieve our dreams</h3>
+			<h3>About the company</h3>
 			<div class="details">
 				<div class="links">
 					<h3>Products</h3>
@@ -21948,11 +21963,12 @@ style this element.
 				</div>
 				<div class="links">
 					<h3>Have any queries or would like to encourage us?</h3>
-					<p>Coutact us on example@gmail.com</p>
+					<p>Contact us on example@gmail.com</p>
 				</div>
 				<div class="links">
 					<h3>Get weekly newsletter and updates of latest products available</h3>
 					<paper-input label="email"></paper-input>
+					<paper-button>Submit</paper-button>
 				</div>
 			</div>
 			<h3>Solesense © 2016</h3>
@@ -22034,7 +22050,7 @@ style this element.
 			</awesome-slider>
 		</div>
 		</section>
-		<section>
+		<section style="margin-bottom: 20px;">
 			<div class="container">
 			<h2>Hot Deals!</h2>
 			<div class="hot-deals">
@@ -26752,7 +26768,7 @@ Custom property | Description | Default
 				</paper-material>
 
 
-				<paper-material class="shoetype2">
+				<paper-material class="shoetype2" style="display:none;">
 						<p> <strong> Shoe Type2 </strong> </p>
 						<paper-checkbox id="men"> Men </paper-checkbox>
 						<paper-checkbox id="women"> Women </paper-checkbox>
@@ -27115,7 +27131,6 @@ Custom property | Description | Default
 			<paper-button id="toCheckout"><a href="#/payment">Proceed to checkout</a></paper-button>
 		</div>
 	</div>
-	<com-footer></com-footer>
 	</app-route></template>
 <script>
 	Polymer({
@@ -30211,13 +30226,9 @@ respectively.
 			}
 			.subitems{
 				display: block;
-				font-size: 20px;
 			}
 			p{
 				padding: 10px;
-			}
-			.total{
-				font-size: 20px;
 			}
 		}
 
@@ -30486,7 +30497,7 @@ respectively.
 				this.push('cart',this.product);
 			},
 			checkout: function(){
-				this.push('buy',this.product);
+				this.push('cart',this.product);
 			},
 			cliked : function(){
 				alert(this.product);
